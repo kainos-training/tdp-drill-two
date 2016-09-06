@@ -2,10 +2,10 @@
 server:
   applicationConnectors:
     - type: http
-      port: 8901
+      port: 8801
   adminConnectors:
     - type: http
-      port: 8902
+      port: 8802
 
 logging:
   level: INFO
@@ -13,5 +13,5 @@ logging:
   appenders:
     - type: console
     - type: file
-      currentLogFilename: log/discoverydiary.log
+      currentLogFilename: log/drillOne.log
       archive: false

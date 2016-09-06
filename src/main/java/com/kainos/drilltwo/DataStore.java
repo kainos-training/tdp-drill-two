@@ -1,7 +1,7 @@
-package com.kainos.discoverydiary;
+package com.kainos.drilltwo;
 
 import com.google.common.collect.Lists;
-import com.kainos.discoverydiary.models.Person;
+import com.kainos.drilltwo.models.Person;
 
 import java.util.List;
 import java.util.UUID;

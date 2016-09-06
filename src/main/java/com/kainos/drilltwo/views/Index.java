@@ -1,4 +1,4 @@
-package com.kainos.discoverydiary.views;
+package com.kainos.drilltwo.views;
 
 import io.dropwizard.views.View;
 

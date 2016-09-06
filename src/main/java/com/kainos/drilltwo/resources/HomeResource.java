@@ -1,7 +1,7 @@
-package com.kainos.discoverydiary.resources;
+package com.kainos.drilltwo.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import com.kainos.discoverydiary.views.Index;
+import com.kainos.drilltwo.views.Index;
 import io.dropwizard.views.View;
 
 import javax.ws.rs.GET;

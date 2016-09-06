@@ -1,2 +1,2 @@
 mvn clean package
-java -jar target/DiscoveryDiary-1.jar server src/DiscoveryDiaryApplicationConfiguration.yml
+java -jar target/DrillTwo-1.jar server src/DrillTwoConfiguration.yml

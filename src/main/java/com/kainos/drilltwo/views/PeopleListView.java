@@ -1,6 +1,6 @@
-package com.kainos.discoverydiary.views;
+package com.kainos.drilltwo.views;
 
-import com.kainos.discoverydiary.models.Person;
+import com.kainos.drilltwo.models.Person;
 import io.dropwizard.views.View;
 
 import java.util.List;

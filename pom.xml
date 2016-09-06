@@ -7,8 +7,8 @@
         <dropwizard.version>0.8.5</dropwizard.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <groupId>DiscoveryDiary</groupId>
-    <artifactId>DiscoveryDiary</artifactId>
+    <groupId>DrillTwo</groupId>
+    <artifactId>DrillTwo</artifactId>
     <version>1</version>
     <dependencies>
         <dependency>
@@ -93,7 +93,7 @@
                         <transformers>
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer" />
                             <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>com.kainos.discoverydiary.DiscoveryDiaryApplication</mainClass>
+                                <mainClass>com.kainos.drilltwo.DrillTwoApplication</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
@@ -126,7 +126,7 @@
                 </defineStatements>
                 <mappings>
                     <mapping>
-                        <directory>/usr/local/drill/lib</directory>
+                        <directory>/usr/local/drilltwo/lib</directory>
                         <configuration>true</configuration>
                         <filemode>644</filemode>
                         <username>vagrant</username>
@@ -141,7 +141,7 @@
                         </sources>
                     </mapping>
                     <mapping>
-                        <directory>/usr/local/drill/lib</directory>
+                        <directory>/usr/local/drilltwo/lib</directory>
                         <filemode>777</filemode>
                         <username>vagrant</username>
                         <groupname>vagrant</groupname>
@@ -149,7 +149,7 @@
                             <source>
                                 <location>target/</location>
                                 <includes>
-                                    <include>DiscoveryDiary-1.jar</include>
+                                    <include>DrillTwo-1.jar</include>
                                 </includes>
                             </source>
                         </sources>

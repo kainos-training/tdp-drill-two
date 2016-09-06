@@ -1,14 +1,12 @@
-package com.kainos.discoverydiary.resources;
+package com.kainos.drilltwo.resources;
 
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.collect.Lists;
-import com.kainos.discoverydiary.DataStore;
-import com.kainos.discoverydiary.config.DiscoveryDiaryConfiguration;
-import com.kainos.discoverydiary.views.PeopleAddView;
-import com.kainos.discoverydiary.views.PeopleListView;
+import com.kainos.drilltwo.DataStore;
+import com.kainos.drilltwo.views.PeopleAddView;
+import com.kainos.drilltwo.views.PeopleListView;
 import io.dropwizard.views.View;
 import org.assertj.core.util.Strings;
-import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,7 +15,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriBuilder;
-import java.io.*;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +26,9 @@ public class PeopleResource {
     final static Logger LOGGER = LoggerFactory.getLogger(PeopleResource.class);
 
     final DataStore dataStore;
-    final DiscoveryDiaryConfiguration configuration;
+    final com.kainos.drilltwo.config.DrillTwoConfiguration configuration;
 
-    public PeopleResource(DataStore dataStore, DiscoveryDiaryConfiguration configuration) {
+    public PeopleResource(DataStore dataStore, com.kainos.drilltwo.config.DrillTwoConfiguration configuration) {
         this.dataStore = dataStore;
         this.configuration = configuration;
     }

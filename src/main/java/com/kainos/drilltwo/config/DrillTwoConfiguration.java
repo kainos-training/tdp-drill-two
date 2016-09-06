@@ -1,13 +1,11 @@
-package com.kainos.discoverydiary.config;
+package com.kainos.drilltwo.config;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.collect.ImmutableMap;
 import io.dropwizard.Configuration;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 
-public class DiscoveryDiaryConfiguration extends Configuration {
+public class DrillTwoConfiguration extends Configuration {
 
     @NotNull
     private ImmutableMap<String, ImmutableMap<String, String>> viewRendererConfiguration = ImmutableMap.of();

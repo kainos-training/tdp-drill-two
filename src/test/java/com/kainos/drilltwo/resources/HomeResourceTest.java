@@ -1,4 +1,4 @@
-package com.kainos.discoverydiary.resources;
+package com.kainos.drilltwo.resources;
 
 import com.codahale.metrics.MetricRegistry;
 import com.google.common.collect.Lists;
@@ -22,7 +22,7 @@ public class HomeResourceTest {
 
     @ClassRule
     public static final ResourceTestRule resources = ResourceTestRule.builder()
-            .addResource(new HomeResource())
+            .addResource(new com.kainos.drilltwo.resources.HomeResource())
             .addProvider(new ViewMessageBodyWriter(new MetricRegistry(), renders))
             .build();
 

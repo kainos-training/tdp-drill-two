@@ -1,4 +1,4 @@
-package com.kainos.discoverydiary.models;
+package com.kainos.drilltwo.models;
 
 import java.util.UUID;
 

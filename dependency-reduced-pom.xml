@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>DiscoveryDiary</groupId>
-  <artifactId>DiscoveryDiary</artifactId>
+  <groupId>DrillTwo</groupId>
+  <artifactId>DrillTwo</artifactId>
   <version>1</version>
   <build>
     <plugins>
@@ -28,7 +28,7 @@
               <transformers>
                 <transformer />
                 <transformer>
-                  <mainClass>com.kainos.discoverydiary.DiscoveryDiaryApplication</mainClass>
+                  <mainClass>com.kainos.drilltwo.DrillTwoApplication</mainClass>
                 </transformer>
               </transformers>
             </configuration>
@@ -49,32 +49,60 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>com.jamierf.dropwizard</groupId>
-        <artifactId>dropwizard-debpkg-maven-plugin</artifactId>
-        <version>0.10</version>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>rpm-maven-plugin</artifactId>
+        <version>2.1.5</version>
         <executions>
           <execution>
-            <phase>package</phase>
+            <id>generate-rpm</id>
             <goals>
-              <goal>dwpackage</goal>
+              <goal>rpm</goal>
             </goals>
           </execution>
         </executions>
         <configuration>
-          <deb>
-            <name>DiscoveryDiary</name>
-          </deb>
-          <configTemplate>${basedir}/src/DiscoveryDiaryApplicationConfiguration.yml</configTemplate>
-          <jvm>
-            <memory>2g</memory>
-          </jvm>
-          <dropwizard>
-            <httpPort>8080</httpPort>
-            <httpAdminPort>8081</httpAdminPort>
-          </dropwizard>
-          <path>
-            <logDirectory>/var/log/${project.artifactId}</logDirectory>
-          </path>
+          <license>GPL (c) 2005, SWWDC</license>
+          <distribution>Trash 2005</distribution>
+          <group>Application/Collectors</group>
+          <packager>SWWDC</packager>
+          <prefix>/usr/local</prefix>
+          <changelogFile>src/changelog</changelogFile>
+          <needarch>noarch</needarch>
+          <targetOS>linux</targetOS>
+          <defineStatements>
+            <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
+          </defineStatements>
+          <mappings>
+            <mapping>
+              <directory>/usr/local/drilltwo/lib</directory>
+              <configuration>true</configuration>
+              <filemode>644</filemode>
+              <username>vagrant</username>
+              <groupname>vagrant</groupname>
+              <sources>
+                <source>
+                  <location>src/</location>
+                  <includes>
+                    <include>*.yml</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
+            <mapping>
+              <directory>/usr/local/drilltwo/lib</directory>
+              <filemode>777</filemode>
+              <username>vagrant</username>
+              <groupname>vagrant</groupname>
+              <sources>
+                <source>
+                  <location>target/</location>
+                  <includes>
+                    <include>DrillTwo-1.jar</include>
+                  </includes>
+                </source>
+              </sources>
+            </mapping>
+          </mappings>
         </configuration>
       </plugin>
     </plugins>
@@ -95,6 +123,7 @@
   </dependencies>
   <properties>
     <dropwizard.version>0.8.5</dropwizard.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 </project>
 
