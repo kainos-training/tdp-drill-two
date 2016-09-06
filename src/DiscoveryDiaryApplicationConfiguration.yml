@@ -1,0 +1,17 @@
+
+server:
+  applicationConnectors:
+    - type: http
+      port: 8901
+  adminConnectors:
+    - type: http
+      port: 8902
+
+logging:
+  level: INFO
+
+  appenders:
+    - type: console
+    - type: file
+      currentLogFilename: log/discoverydiary.log
+      archive: false
