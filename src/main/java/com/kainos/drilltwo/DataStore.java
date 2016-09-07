@@ -13,7 +13,7 @@ public class DataStore {
 		return books;
 	}
 
-	public void registerPerson(String isbn, String title, String author) {
+	public void registerBook(String isbn, String title, String author) {
 		Book newBook = new Book();
 		newBook.setIsbn(isbn);
 		newBook.setTitle(title);
