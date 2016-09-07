@@ -100,63 +100,6 @@
                 </execution>
             </executions>
         </plugin>
-        <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>rpm-maven-plugin</artifactId>
-            <version>2.1.5</version>
-            <executions>
-                <execution>
-                    <id>generate-rpm</id>
-                    <goals>
-                        <goal>rpm</goal>
-                    </goals>
-                </execution>
-            </executions>
-            <configuration>
-                <license>GPL (c) 2005, SWWDC</license>
-                <distribution>Trash 2005</distribution>
-                <group>Application/Collectors</group>
-                <packager>SWWDC</packager>
-                <prefix>/usr/local</prefix>
-                <changelogFile>src/changelog</changelogFile>
-                <needarch>noarch</needarch>
-                <targetOS>linux</targetOS>
-                <defineStatements>
-                    <defineStatement>_unpackaged_files_terminate_build 0</defineStatement>
-                </defineStatements>
-                <mappings>
-                    <mapping>
-                        <directory>/usr/local/drilltwo/lib</directory>
-                        <configuration>true</configuration>
-                        <filemode>644</filemode>
-                        <username>vagrant</username>
-                        <groupname>vagrant</groupname>
-                        <sources>
-                            <source>
-                                <location>src/</location>
-                                <includes>
-                                    <include>*.yml</include>
-                                </includes>
-                            </source>
-                        </sources>
-                    </mapping>
-                    <mapping>
-                        <directory>/usr/local/drilltwo/lib</directory>
-                        <filemode>777</filemode>
-                        <username>vagrant</username>
-                        <groupname>vagrant</groupname>
-                        <sources>
-                            <source>
-                                <location>target/</location>
-                                <includes>
-                                    <include>DrillTwo-1.jar</include>
-                                </includes>
-                            </source>
-                        </sources>
-                    </mapping>
-                </mappings>
-            </configuration>
-        </plugin>
     </plugins>
     </build>
 </project>
