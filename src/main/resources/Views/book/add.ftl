@@ -2,7 +2,7 @@
   <@layoutTemplate.layout>  
 <h1>Add a book</h1> 
 <p class="lead">Please provide details of the book.</p>  
-<form enctype="multipart/form-data" action="/book/add" method="post" autocomplete="off">  
+<form enctype="multipart/form-data" action="/add" method="post" autocomplete="off">  
 <#if errors??> 
 <div class="bg-danger text-danger">
 <ul> <#list errors as error> <li> 
@@ -45,6 +45,6 @@ ${error} 
 
 </div>
 <input type="submit" value="Confirm" class="btn btn-primary" /> 
-<a class="btn btn-default" href="/book">Cancel</a>  </form>   </@layoutTemplate.layout>
+<a class="btn btn-default" href="/">Cancel</a>  </form>   </@layoutTemplate.layout>
 </form>
 

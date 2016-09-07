@@ -8,14 +8,14 @@ import java.util.List;
 
 public class BookListView extends View {
 
-    private final List<Book> book;
+    private final List<Book> books;
 
-    public BookListView(List<Book> book) {
+    public BookListView(List<Book> books) {
         super("/Views/book/index.ftl");
-        this.book = book;
+        this.books = books;
     }
 
-    public List<Book> getBook() {
-        return book;
+    public List<Book> getBooks() {
+        return books;
     }
 }

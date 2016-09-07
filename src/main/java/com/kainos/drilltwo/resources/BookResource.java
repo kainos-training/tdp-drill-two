@@ -25,7 +25,7 @@ import java.util.UUID;
 /**
  * Created by jordanw on 07/09/2016.
  */
-@Path("book")
+@Path("")
 public class BookResource
 {
 
@@ -92,7 +92,7 @@ public class BookResource
             LOGGER.info("Registering book " + String.format("isbn: %s title: %s author: %s", isbn, title, author));
             dataStore.registerBook(isbn, title, author);
 
-            URI bookListUri = UriBuilder.fromUri("/book").build();
+            URI bookListUri = UriBuilder.fromUri("/").build();
             Response response = Response.seeOther(bookListUri).build();
             throw new WebApplicationException(response); // valid way to redirect in dropwizard
 

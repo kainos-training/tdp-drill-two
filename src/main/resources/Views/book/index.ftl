@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="" type="com.kainos.discoverydiary.views.PeopleListView" --> 
+<#-- @ftlvariable name="" type="com.kainos.discoverydiary.views.BookListView" --> 
 <#import "../layout.ftl" as layoutTemplate>  
 <@layoutTemplate.layout>  
 <h1>Book list</h1>
@@ -12,14 +12,14 @@
 <#list books as book> 
 <tr> 
 <td> 
-${book.Title} 
+${book.title} 
 </td> 
 <td> 
-${book.Author} 
+${book.author} 
 </td> 
 </tr> 
 </#list>  
 </tbody> 
 </table>  
-<a class="btn btn-default" href="/book/add">Add Book</a>  
+<a class="btn btn-default" href="/add">Add Book</a>  
 </@layoutTemplate.layout>
