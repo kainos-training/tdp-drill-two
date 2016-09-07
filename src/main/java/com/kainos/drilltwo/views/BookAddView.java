@@ -4,12 +4,12 @@ import io.dropwizard.views.View;
 
 import java.util.List;
 
-public class PeopleAddView extends View {
+public class BookAddView extends View {
 
     private final List<String> errors;
 
-    public PeopleAddView(List<String> errors) {
-        super("/Views/people/add.ftl");
+    public BookAddView(List<String> errors) {
+        super("/Views/book/add.ftl");
         this.errors = errors;
     }
 
