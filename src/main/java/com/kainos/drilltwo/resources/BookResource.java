@@ -44,7 +44,7 @@ public class BookResource
         @Timed
         @Produces(MediaType.TEXT_HTML)
         public View index(){
-            return new BookListView(dataStore.getBook());
+            return new BookListView(dataStore.getBooks());
         }
 
         @Path("add")

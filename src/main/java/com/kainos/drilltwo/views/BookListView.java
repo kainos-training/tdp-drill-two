@@ -1,5 +1,6 @@
 package com.kainos.drilltwo.views;
 
+import com.kainos.drilltwo.models.Book;
 import com.kainos.drilltwo.models.Person;
 import io.dropwizard.views.View;
 
