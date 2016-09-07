@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.kainos.drilltwo.models.Book;
 
 import java.util.List;
-import java.util.UUID;
 
 public class DataStore {
 
@@ -14,7 +13,7 @@ public class DataStore {
 		return books;
 	}
 
-	public void registerPerson(UUID isbn, String title, String author) {
+	public void registerPerson(String isbn, String title, String author) {
 		Book newBook = new Book();
 		newBook.setIsbn(isbn);
 		newBook.setTitle(title);

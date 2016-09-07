@@ -1,19 +1,17 @@
 package com.kainos.drilltwo.models;
 
-import java.util.UUID;
-
 public class Book {
 
-    private UUID isbn;
+    private String isbn;
     private String title;
     private String author;
 
 
-    public UUID getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(UUID isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
