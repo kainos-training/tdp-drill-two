@@ -7,8 +7,6 @@ public class Book {
     private UUID isbn;
     private String title;
     private String author;
-    private Location location;
-    private Condition condition;
 
 
     public UUID getIsbn() {
@@ -33,21 +31,5 @@ public class Book {
 
     public void setAuthor(String author) {
         this.author = author;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
-    public Condition getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Condition condition) {
-        this.condition = condition;
     }
 }

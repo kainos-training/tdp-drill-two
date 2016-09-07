@@ -1,24 +1,23 @@
 package com.kainos.drilltwo;
 
 import com.google.common.collect.Lists;
-import com.kainos.drilltwo.models.Person;
+import com.kainos.drilltwo.models.Book;
 
 import java.util.List;
 import java.util.UUID;
 
 public class DataStore {
 
-	private static List<Person> people = Lists.newArrayList();
+	private static List<Book> books = Lists.newArrayList();
 
-	public List<Person> getPeople() {
-		return people;
+	public List<Book> getBooks() {
+		return books;
 	}
 
-	public void registerPerson(UUID id, String name, Integer age) {
-		Person newPerson = new Person();
-		newPerson.setId(id);
-		newPerson.setName(name);
-		newPerson.setAge(age);
-		people.add(newPerson);
+	public void registerPerson(UUID isbn, String title, String author) {
+		Book newBook = new Book();
+		newBook.setIsbn(isbn);
+		newBook.setTitle(title);
+		newBook.setAuthor(author);
 	}
 }
