@@ -1,8 +1,8 @@
 package com.kainos.drilltwo;
 
 import com.kainos.drilltwo.config.DrillTwoConfiguration;
+import com.kainos.drilltwo.resources.BookResource;
 import com.kainos.drilltwo.resources.HomeResource;
-import com.kainos.drilltwo.resources.PeopleResource;
 import io.dropwizard.Application;
 import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.forms.MultiPartBundle;
@@ -20,10 +20,10 @@ public class DrillTwoApplication extends Application<DrillTwoConfiguration> {
 
     public void run(DrillTwoConfiguration discoveryDiaryConfiguration, Environment environment) throws Exception {
         final HomeResource homeResource = new HomeResource();
-        final PeopleResource peopleResource = new PeopleResource(new DataStore(), discoveryDiaryConfiguration);
+        final BookResource bookResource = new BookResource(new DataStore(), discoveryDiaryConfiguration);
 
         environment.jersey().register(homeResource);
-        environment.jersey().register(peopleResource);
+        environment.jersey().register(bookResource);
     }
 
     public static void main(String[] args) throws Exception {
