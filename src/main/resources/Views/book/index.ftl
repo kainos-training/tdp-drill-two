@@ -5,17 +5,17 @@
  <p class="lead">Registered books.</p>  
 <table class="table"> 
 <thead> 
-<th>Title</th> 
-<th>Author</th> 
+    <th>Title</th> 
+    <th>Author</th> 
 </thead>  
 <tbody> 
-<#list books as book> 
+    <#list books as book> 
 <tr> 
 <td> 
-${book.title} 
+    ${book.title} 
 </td> 
 <td> 
-${book.author} 
+    ${book.author} 
 </td> 
 </tr> 
 </#list>  

@@ -3,10 +3,13 @@
 <h1>Add a book</h1> 
 <p class="lead">Please provide details of the book.</p>  
 <form enctype="multipart/form-data" action="/add" method="post" autocomplete="off">  
-<#if errors??> 
+<#if errors? has_content> 
 <div class="bg-danger text-danger">
-<ul> <#list errors as error> <li> 
-${error} 
+<ul> 
+<#list errors as error>
+ <li> 
+    ${error} 
+
 </li> 
 </#list>
 </ul> 
