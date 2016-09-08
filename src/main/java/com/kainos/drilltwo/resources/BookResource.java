@@ -69,16 +69,17 @@ public class BookResource
 
             List<String> errors = Lists.newArrayList();
 
-            if (Strings.isNullOrEmpty(isbn)) {
+            if (isISBNError(isbn))
+            {
                 errors.add("Enter a valid ISBN");
             }
-            // add more validation later
 
-            if (Strings.isNullOrEmpty(title) || title.length() > 200) {
+
+            if(isTextError(title)){
                 errors.add("Enter a valid title");
             }
 
-            if(Strings.isNullOrEmpty(author) || title.length() > 200)
+            if(isTextError(author))
             {
                 errors.add("Enter a valid author");
             }
@@ -98,5 +99,22 @@ public class BookResource
 
 
         }
+
+        private boolean isTextError(String text)
+        {
+            return Strings.isNullOrEmpty(text) || text.length() > 200 || text.contains("<");
+        }
+
+        private boolean isISBNError(String isbn)
+        {
+            boolean isMissing = Strings.isNullOrEmpty(isbn);
+            boolean matchesIsbn10 = isbn.matches("\\d{9}-\\d");
+            boolean matchesIsbn13 = isbn.matches("\\d{3}-\\d-\\d{2}-\\d{6}-\\d");
+            boolean matchesEitherFormat = matchesIsbn10 || matchesIsbn13;
+
+            return isMissing || !matchesEitherFormat;
+        }
+
+
 
 }
