@@ -15,7 +15,8 @@ public class BookListView extends View {
         this.books = books;
     }
 
-    public List<Book> getBooks() {
+    public List<Book> getBooks()
+    {
         return books;
     }
 }

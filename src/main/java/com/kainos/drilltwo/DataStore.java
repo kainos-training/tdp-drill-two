@@ -18,5 +18,7 @@ public class DataStore {
 		newBook.setIsbn(isbn);
 		newBook.setTitle(title);
 		newBook.setAuthor(author);
+
+		books.add(newBook);
 	}
 }
