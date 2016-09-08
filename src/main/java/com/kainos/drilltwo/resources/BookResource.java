@@ -55,6 +55,8 @@ public class BookResource
             return new BookAddView(new ArrayList<String>());
         }
 
+        
+
         @Path("add")
         @POST
         @Timed

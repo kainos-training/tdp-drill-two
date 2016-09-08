@@ -1,5 +1,6 @@
 <#import "../layout.ftl" as layoutTemplate>
   <@layoutTemplate.layout>  
+
 <h1>Add a book</h1> 
 <p class="lead">Please provide details of the book.</p>  
 <form enctype="multipart/form-data" action="/add" method="post" autocomplete="off">  
