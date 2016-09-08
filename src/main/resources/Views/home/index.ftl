@@ -100,14 +100,14 @@ $(".done-btn").click(function() {
     <#list books as book> 
 <tr> 
 <td> 
-    <span class="title-text">${book.title} </span>
+    <span class="title-text">${book.title}</span>
     <!-- This is the ID that is hidden -->
     <input type = "hidden" class = "ID-edit" value = "${book.ID}">
     <input type = "text" class = "title-edit" style="display:none">
 
 </td> 
 <td> 
-    <span class="author-text">${book.author} </span>
+    <span class="author-text">${book.author}</span>
     <input type = "text" class="author-edit" style="display:none">
 </td> 
 <td>
