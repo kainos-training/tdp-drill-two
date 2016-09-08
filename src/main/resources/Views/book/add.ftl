@@ -47,7 +47,7 @@
 
 
 </div>
-<input type="submit" value="Confirm" class="btn btn-primary" /> 
+<input type="submit" value="Submit" class="btn btn-success" /> 
 <a class="btn btn-default" href="/">Cancel</a>  </form>   </@layoutTemplate.layout>
 </form>
 

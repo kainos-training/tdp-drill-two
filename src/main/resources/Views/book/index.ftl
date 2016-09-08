@@ -3,6 +3,7 @@
 <@layoutTemplate.layout>  
 <h1>Book list</h1>
  <p class="lead">Registered books.</p>  
+<a class="btn btn-default" href="/add">Add Book</a>  
 <table class="table"> 
 <thead> 
     <th>Title</th> 
@@ -21,5 +22,4 @@
 </#list>  
 </tbody> 
 </table>  
-<a class="btn btn-default" href="/add">Add Book</a>  
 </@layoutTemplate.layout>
