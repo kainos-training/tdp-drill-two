@@ -39,6 +39,7 @@ public class BookResourceTest {
     @Before
     public void setup() {
         dataStore =  new DataStore();
+        dataStore.getBooks().clear();
         configration = new DrillTwoConfiguration();
     }
 
@@ -82,8 +83,8 @@ public class BookResourceTest {
     {
         Book book = new Book();
         book.setIsbn("123456789-7");
-        book.setTitle("High");
-        book.setAuthor("flying");
+        book.setTitle("zzz");
+        book.setAuthor("zzz");
 
         dataStore.registerBook(book.getIsbn(),book.getTitle(),book.getAuthor());
 
@@ -135,7 +136,7 @@ public class BookResourceTest {
 
         Book bookCheck = dataStore.getBooks().get(0);
 
-        assertEquals(book2.getTitle(), bookCheck.getTitle());
+        assertEquals(book2.getAuthor(), bookCheck.getAuthor());
 
     }
 
