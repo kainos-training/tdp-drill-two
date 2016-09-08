@@ -25,7 +25,7 @@ import java.util.UUID;
 /**
  * Created by jordanw on 07/09/2016.
  */
-@Path("")
+@Path("/")
 public class BookResource
 {
 
@@ -43,7 +43,9 @@ public class BookResource
         @GET
         @Timed
         @Produces(MediaType.TEXT_HTML)
-        public View index(){
+        public View index()
+        {
+            dataStore.sortByTitle();
             return new BookListView(dataStore.getBooks());
         }
 
@@ -60,7 +62,7 @@ public class BookResource
         @Timed
         @Produces(MediaType.TEXT_HTML)
         @Consumes(MediaType.MULTIPART_FORM_DATA)
-        public View addBook(
+        public BookAddView addBook(
                 @FormDataParam("isbn") String isbn,
                 @FormDataParam("title") String title,
                 @FormDataParam("author") String author
@@ -88,7 +90,7 @@ public class BookResource
                 return new BookAddView(errors);
             }
 
-            //UUID idForNewPerson = UUID.randomUUID();
+            UUID idForNewPerson = UUID.randomUUID();
 
             LOGGER.info("Registering book " + String.format("isbn: %s title: %s author: %s", isbn, title, author));
             dataStore.registerBook(isbn, title, author);
