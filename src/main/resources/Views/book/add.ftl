@@ -18,17 +18,17 @@
 <div class = "halfwidth">
 <div class="form-group"> 
     <label for="isbn">ISBN</label> 
-    <input name="ISBN" type="text"  placeholder="Book ISBN" class="form-control" required /> 
+    <input name="isbn" type="text"  placeholder="Book ISBN" class="form-control" required /> 
     <p class="help-block">Please enter the books ISBN</p> 
 </div>  
 <div class="form-group"> 
     <label for="title">Book Title</label> 
-    <input name="Title" type="text" size = "50" maxlength="200" placeholder="Book Title" class="form-control" required /> 
+    <input name="title" type="text" size = "50" maxlength="200" placeholder="Book Title" class="form-control" required /> 
     <p class="help-block">Please enter the book title, max 200 characters</p> 
 </div>  
     <div class="form-group"> 
     <label for="author">Author</label> 
-    <input name="Author" type="text" size = "50" maxlength="200" placeholder="Book Author" class="form-control" required /> 
+    <input name="author" type="text" size = "50" maxlength="200" placeholder="Book Author" class="form-control" required /> 
 <p class="help-block">Please enter the author of the book, max 200 characters</p> 
 </div>  
 
