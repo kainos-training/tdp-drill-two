@@ -63,7 +63,8 @@ public class BookResource
         public View addBook(
                 @FormDataParam("isbn") String isbn,
                 @FormDataParam("title") String title,
-                @FormDataParam("author") String author
+                @FormDataParam("author") String author,
+                @FormDataParam("current") String current
         )
         {
 
@@ -84,14 +85,20 @@ public class BookResource
                 errors.add("Enter a valid author");
             }
 
+            if (isTextError(current)){
+                errors.add("Enter a valid current status");
+            }
+
             if (!errors.isEmpty()) {
                 return new BookAddView(errors);
             }
 
+
+
             //UUID idForNewPerson = UUID.randomUUID();
 
             LOGGER.info("Registering book " + String.format("isbn: %s title: %s author: %s", isbn, title, author));
-            dataStore.registerBook(isbn, title, author);
+            dataStore.registerBook(isbn, title, author, current);
 
             URI bookListUri = UriBuilder.fromUri("/").build();
             Response response = Response.seeOther(bookListUri).build();
