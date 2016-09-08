@@ -1,10 +1,12 @@
 package com.kainos.drilltwo.resources;
 
+import javax.print.attribute.standard.Media;
 import javax.ws.rs.Path;
 //import java.util.logging.Logger;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.collect.Lists;
 import com.kainos.drilltwo.DataStore;
+import com.kainos.drilltwo.models.Book;
 import com.kainos.drilltwo.views.BookAddView;
 import com.kainos.drilltwo.views.BookListView;
 import io.dropwizard.views.View;
@@ -55,6 +57,15 @@ public class BookResource
             return new BookAddView(new ArrayList<String>());
         }
 
+        @Path("update")
+        @POST
+        @Timed
+        @Produces(MediaType.TEXT_HTML)
+        public void updateBook(int ID, String title, String author){
+         Book UpdateBook = dataStore.getBook(ID);
+            UpdateBook.setTitle(title);
+            UpdateBook.setAuthor(author);
+        }
         
 
         @Path("add")

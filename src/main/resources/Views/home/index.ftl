@@ -58,6 +58,20 @@ $(".done-btn").click(function() {
     var editBtn = currentRow.find('.edit-btn');
     editBtn.show();
 
+    var BookID = currentRow.find('.ID-edit');
+
+    var PostData = {
+        title: titleText.val(),
+        author: authorText.val(),
+        ID: BookID.val()
+    };
+
+    $.ajax({
+      type: "POST",
+      url: "/update",
+      data: PostData
+    });
+
 });
 
 });
@@ -78,6 +92,8 @@ $(".done-btn").click(function() {
 <tr> 
 <td> 
     <span class="title-text">${book.title} </span>
+    <!-- This is the ID that is hidden -->
+    <input type = "hidden" class = "ID-edit" value = "${book.ID}">
     <input type = "text" class = "title-edit" style="display:none">
 
 </td> 

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.kainos.drilltwo.models.Book;
 
 import java.util.List;
+import java.util.UUID;
 
 public class DataStore {
 
@@ -20,5 +21,14 @@ public class DataStore {
 		newBook.setAuthor(author);
 
 		books.add(newBook);
+	}
+
+	public Book getBook(int BookID){
+		for(Book book: books){
+			//if the book IDs match, return that book
+			if(BookID == book.getID()){
+				return book;
+			}
+		}
 	}
 }
