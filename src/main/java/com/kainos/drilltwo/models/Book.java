@@ -5,6 +5,15 @@ public class Book {
     private String isbn;
     private String title;
     private String author;
+    private int ID;
+    private String current;
+
+    private static int nextID = 0;
+
+    public Book (){
+        this.ID = nextID;
+        nextID++;
+    }
 
 
     public String getIsbn() {
@@ -30,4 +39,16 @@ public class Book {
     public void setAuthor(String author) {
         this.author = author;
     }
+
+    public int getID (){
+        return ID;
+    }
+
+    public String getCurrent(){ return current;}
+
+    public void setCurrent(String current){
+        this.current = current;
+    }
+
+
 }
