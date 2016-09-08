@@ -40,22 +40,10 @@ public class BookResourceTest {
     public void setup() {
         dataStore =  new DataStore();
         configration = new DrillTwoConfiguration();
-
-
     }
 
 
-    /*@Test
-    public void testBookHome() {
-        Response response = resources.client()
-                .target("/")
-                .request(MediaType.TEXT_HTML_TYPE)
-                .get();
-
-        assertEquals(200, response.getStatus());
-    }*/
-
-    /*@Test
+    @Test
     public void validationISBN() {
         BookResource resource = new BookResource(dataStore, configration);
 
@@ -74,7 +62,7 @@ public class BookResourceTest {
 
         result.getErrors();
 
-        assertEquals(result.getErrors().get(0), ("Enter a valid title"));
+        assertEquals(result.getErrors().get(1), ("Enter a valid title"));
     }
 
     @Test
@@ -85,7 +73,7 @@ public class BookResourceTest {
 
         result.getErrors();
 
-        assertEquals(result.getErrors().get(0), ("Enter a valid author"));
+        assertEquals(result.getErrors().get(2), ("Enter a valid author"));
     }
 
 
@@ -103,7 +91,7 @@ public class BookResourceTest {
 
         assertEquals(book.getTitle(),books.getTitle());
 
-    }*/
+    }
 
 
 
