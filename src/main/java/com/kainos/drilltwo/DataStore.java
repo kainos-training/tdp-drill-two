@@ -30,5 +30,7 @@ public class DataStore {
 				return book;
 			}
 		}
+
+		return null;
 	}
 }

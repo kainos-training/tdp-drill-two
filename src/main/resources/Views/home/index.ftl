@@ -61,15 +61,24 @@ $(".done-btn").click(function() {
     var BookID = currentRow.find('.ID-edit');
 
     var PostData = {
-        title: titleText.val(),
-        author: authorText.val(),
+        title: titleEdit.val(),
+        author: authorEdit.val(),
         ID: BookID.val()
     };
 
     $.ajax({
       type: "POST",
       url: "/update",
-      data: PostData
+      data: {
+        title: titleEdit.val(),
+        author: authorEdit.val(),
+        ID: BookID.val()
+     }
+
+      //url: "/update?" + "ID=" + BookID.val() + "&title=" + titleEdit.val() + "&author=" + authorEdit.val()
+      //data: PostData,
+      //contentType: 'application/json',
+      //dataType: 'json'
     });
 
 });

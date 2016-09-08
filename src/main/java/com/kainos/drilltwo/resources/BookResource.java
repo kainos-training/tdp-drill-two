@@ -7,6 +7,7 @@ import com.codahale.metrics.annotation.Timed;
 import com.google.common.collect.Lists;
 import com.kainos.drilltwo.DataStore;
 import com.kainos.drilltwo.models.Book;
+import com.kainos.drilltwo.models.UpdateBook;
 import com.kainos.drilltwo.views.BookAddView;
 import com.kainos.drilltwo.views.BookListView;
 import io.dropwizard.views.View;
@@ -60,9 +61,11 @@ public class BookResource
         @Path("update")
         @POST
         @Timed
-        @Produces(MediaType.TEXT_HTML)
-        public void updateBook(int ID, String title, String author){
-         Book UpdateBook = dataStore.getBook(ID);
+        @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+        //public void updateBook(@QueryParam("ID") int ID, @QueryParam("author") String author, @QueryParam("title") String title){
+        public void updateBook(@FormParam("ID") int ID, @FormParam("author") String author, @FormParam("title") String title){
+
+            Book UpdateBook = dataStore.getBook(ID);
             UpdateBook.setTitle(title);
             UpdateBook.setAuthor(author);
         }
