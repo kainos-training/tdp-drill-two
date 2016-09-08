@@ -25,7 +25,7 @@ import java.util.UUID;
 /**
  * Created by jordanw on 07/09/2016.
  */
-@Path("")
+@Path("/")
 public class BookResource
 {
 
@@ -43,7 +43,9 @@ public class BookResource
         @GET
         @Timed
         @Produces(MediaType.TEXT_HTML)
-        public View index(){
+        public View index()
+        {
+            dataStore.sortByTitle();
             return new BookListView(dataStore.getBooks());
         }
 
@@ -60,10 +62,11 @@ public class BookResource
         @Timed
         @Produces(MediaType.TEXT_HTML)
         @Consumes(MediaType.MULTIPART_FORM_DATA)
-        public View addBook(
+        public BookAddView addBook(
                 @FormDataParam("isbn") String isbn,
                 @FormDataParam("title") String title,
-                @FormDataParam("author") String author
+                @FormDataParam("author") String author,
+                @FormDataParam("current") String current
         )
         {
 
@@ -84,6 +87,10 @@ public class BookResource
                 errors.add("Enter a valid author");
             }
 
+            if (isTextError(current)){
+                errors.add("Enter a valid current status");
+            }
+
             if (!errors.isEmpty()) {
                 return new BookAddView(errors);
             }
@@ -91,7 +98,7 @@ public class BookResource
             //UUID idForNewPerson = UUID.randomUUID();
 
             LOGGER.info("Registering book " + String.format("isbn: %s title: %s author: %s", isbn, title, author));
-            dataStore.registerBook(isbn, title, author);
+            dataStore.registerBook(isbn, title, author, current);
 
             URI bookListUri = UriBuilder.fromUri("/").build();
             Response response = Response.seeOther(bookListUri).build();
