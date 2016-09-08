@@ -93,12 +93,51 @@ public class BookResourceTest {
 
     }
 
+    @Test
+    public void isTitlesSorted(){
+        Book book = new Book();
+        book.setIsbn("123456789-7");
+        book.setTitle("High");
+        book.setAuthor("flying");
 
+        Book book2 = new Book();
+        book2.setIsbn("123456789-7");
+        book2.setTitle("Bye");
+        book2.setAuthor("Sky");
 
+        dataStore.registerBook(book.getIsbn(),book.getTitle(),book.getAuthor());
+        dataStore.registerBook(book2.getIsbn(),book2.getTitle(),book2.getAuthor());
 
+        dataStore.sortByTitle();
 
+        Book bookCheck = dataStore.getBooks().get(0);
 
+        assertEquals(book2.getTitle(), bookCheck.getTitle());
 
+    }
+
+    @Test
+    public void isAuthorsSorted(){
+        Book book = new Book();
+        book.setIsbn("123456789-7");
+        book.setTitle("High");
+        book.setAuthor("flying");
+
+        Book book2 = new Book();
+        book2.setIsbn("123456789-7");
+        book2.setTitle("zeb");
+        book2.setAuthor("alpha");
+
+        dataStore.registerBook(book.getIsbn(),book.getTitle(),book.getAuthor());
+        dataStore.registerBook(book2.getIsbn(),book2.getTitle(),book2.getAuthor());
+
+        dataStore.sortByAuthor();
+
+        Book bookCheck = dataStore.getBooks().get(0);
+
+        assertEquals(book2.getTitle(), bookCheck.getTitle());
+
+    }
 
 
 }
